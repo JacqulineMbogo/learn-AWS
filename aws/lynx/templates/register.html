@@ -1,0 +1,44 @@
+<html>
+{% include 'base_dir/head.html' %}
+{% include 'base_dir/navbar.html' %}
+{% load crispy_forms_tags %}
+
+<body>
+
+
+
+<div class="container bg-light shadow-md p-5 form-layout">
+        <br>
+        <h1> Register </h1>
+        <form method="POST" autocomplete="off">
+
+            {% csrf_token %}
+
+            {{form.username|as_crispy_field}}
+
+            <br>
+
+            {{form.email|as_crispy_field}}
+
+            <br>
+
+            {{form.password1|as_crispy_field}}
+
+            <br>
+
+            {{form.password2|as_crispy_field}}
+
+            <br>
+
+            <input class="btn btn-primary w-100" type="submit" value="Create my account"/>
+
+        </form>
+
+        <br>
+
+        <p> Already have an account? </p> <a href="{% url 'login' %}">  Login to my account </a> </p>
+
+
+    </div>
+</body>
+</html>
