@@ -1,0 +1,89 @@
+<html>
+{% include 'base_dir/head.html' %}
+{% load crispy_forms_tags %}
+<body>
+    <br>
+
+    <div class="container bg-light shadow-md p-5 form-layout">
+
+        <h3> Update username and email </h3>
+
+        <br>
+
+        <form method="POST" autocomplete="off">
+
+            {% csrf_token %}
+
+            {{user_form.username}}
+
+            <br>
+
+            {{user_form.email|as_crispy_field}}
+
+            <br>
+
+            <input class="btn btn-primary" type="submit" value="Update"/>
+
+            <br>
+
+
+        </form>
+
+    </div>
+
+    <br>
+
+
+
+    <div class="container bg-light shadow-md p-5 form-layout">
+
+        <h3> Upload your profile picture </h3>
+
+        <hr>
+
+        <br>
+
+
+        <form method="POST" autocomplete="off" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            {{profile_form.profile_pic|as_crispy_field}}
+
+            <br> <br>
+
+            <input class="btn btn-primary" type="submit" value="Update"/>
+
+
+        </form>
+
+
+
+    </div>
+
+
+
+
+
+    <br>
+
+    <div class="container bg-light shadow-md p-5 form-layout">
+
+        <h3> Account deletion </h3>
+
+        <br>
+
+        <a href="{% url 'delete' %}"> Delete account </a>
+
+
+    </div>
+
+    <br>
+</body>
+
+</html>
+
+
+
+
+

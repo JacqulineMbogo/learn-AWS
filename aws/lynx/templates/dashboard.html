@@ -1,0 +1,32 @@
+<html>
+{% include 'base_dir/head.html' %}
+{% load static %}
+
+    <br>
+
+    <div class="container bg-light shadow-md p-5 form-layout">
+
+
+        <h1> Dashboard </h1>
+
+        <hr>
+
+        Welcome, {{user}}!
+
+        <br> <br>
+
+        <img style="width: 100px;" src="/static/{{profilePic.profile_pic.url}}"/>
+<br>
+
+        <a class="btn btn-outline-warning btn-lg" type="button"  href="{%  url 'profile' %}">Profile</a>
+        <br>
+
+    </div>
+
+
+</html>
+
+
+
+
+

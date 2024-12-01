@@ -1,0 +1,45 @@
+<html>
+{% include 'base_dir/head.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+<body>
+    <div class="container bg-light shadow-md p-5 form-layout">
+
+        <h1> My login </h1>
+
+        <br>
+
+        <form method="POST" autocomplete="off">
+
+            {% csrf_token %}
+
+            {{form.username|as_crispy_field}}
+
+            <br>
+
+            {{form.password|as_crispy_field}}
+
+            <br>
+
+            <input class="btn btn-primary w-100" type="submit" value="Login"/>
+
+            <br>
+
+
+        </form>
+
+        <br>
+
+        <p> Don't have an account? </p> <a href="{% url 'register' %}">  Create my account </a> </p>
+
+
+
+    </div>
+
+</body>
+</html>
+
+
+
+
+

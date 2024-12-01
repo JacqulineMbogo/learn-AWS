@@ -1,0 +1,27 @@
+<html>
+
+   {% include 'base_dir/head.html' %}
+  {% load crispy_forms_tags %}
+
+    <br>
+
+    <div class="container bg-light shadow-md p-5 form-layout">
+
+        <form method="POST" autocomplete="off">
+
+            {% csrf_token %}
+
+            <p> Are you sure that you want to delete your account? </p>
+
+            <br>
+
+            <a href="{% url 'profile' %}"> Go back </a>
+
+            <br> <br>
+
+            <input class="btn btn-danger" type="submit" value="Confirm account deletion"/>
+
+        </form>
+
+    </div>
+</html>
