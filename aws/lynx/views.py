@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 
 from .forms import CreateUserForm
 
+from . models import Profile
+
 
 # Create your views here.
 def index(request):
@@ -14,7 +16,11 @@ def register(request):
         form = CreateUserForm(request.POST)
 
         if form.is_valid():
+            current_user = form.save(commit=False)
+
             form.save()
+
+            profile = Profile.objects.create(user = current_user)
             return redirect("login")
 
     context = {'form': form}

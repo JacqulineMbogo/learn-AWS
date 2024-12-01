@@ -1,6 +1,5 @@
 <html>
 {% include 'base_dir/head.html' %}
-{% include 'base_dir/navbar.html' %}
 
 <body>
 
@@ -14,7 +13,9 @@
           <br>
 
 
-          <a class="btn btn-outline-primary btn-lg" type="button"  href="">Register</a>
+          <a class="btn btn-outline-success btn-lg" type="button"  href="{%  url 'register' %}">Register</a>
+
+            <a class="btn btn-outline-warning btn-lg" type="button"  href="{%  url 'login' %}">Login</a>
 
 
         </div>
