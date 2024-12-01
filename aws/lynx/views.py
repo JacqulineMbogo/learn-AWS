@@ -107,4 +107,9 @@ def delete(request):
 
 @login_required(login_url='login')
 def dashboard(request):
-    return render(request, 'dashboard.html')
+    profile_pic = Profile.objects.get(user=request.user)
+
+    context = {'profilePic': profile_pic}
+
+    return render(request, 'dashboard.html', context=context)
+
